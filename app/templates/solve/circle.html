@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>წრეწირის გამოთვლა</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">{{ form.r.label }} {{ form.r(class="form-control") }}</div>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+
+{% if area %}
+<hr>
+<p>ფართობი: {{ area }}</p>
+<p>სიგრძე: {{ circumference }}</p>
+{% endif %}
+{% endblock %}

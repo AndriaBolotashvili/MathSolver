@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>სამკუთხედის ფართობი</h2>
+<form method="post">
+{{ form.hidden_tag() }}
+{{ form.a.label }} {{ form.a(class="form-control") }}<br>
+{{ form.b.label }} {{ form.b(class="form-control") }}<br>
+{{ form.c.label }} {{ form.c(class="form-control") }}<br>
+{{ form.submit(class="btn btn-success") }}
+</form>
+{% if area %}
+<div class="alert alert-info mt-3">ფართობი: {{ area }}</div>
+{% endif %}
+{% endblock %}

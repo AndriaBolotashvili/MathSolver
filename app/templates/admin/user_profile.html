@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>👤 {{ user.username }}</h2>
+
+<ul class="list-group mt-3">
+  <li class="list-group-item">ID: {{ user.id }}</li>
+  <li class="list-group-item">ამოხსნილი ამოცანები: {{ solved_count }}</li>
+  <li class="list-group-item">
+    სტატუსი:
+    {% if user.is_banned %}
+      <span class="text-danger">დაბანილი</span>
+    {% else %}
+      <span class="text-success">აქტიური</span>
+    {% endif %}
+  </li>
+</ul>
+
+<a href="/admin/users" class="btn btn-secondary mt-4">← უკან</a>
+
+{% endblock %}

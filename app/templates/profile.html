@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <h1>პროფილი: {{ current_user.username }}</h1>
+    <p>ამოხსნილი ამოცანების რაოდენობა: {{ solved_count }}</p>
+</div>
+
+{% endblock %}

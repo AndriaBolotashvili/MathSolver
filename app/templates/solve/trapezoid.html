@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>ტრაპეციის ფართობის გამოთვლა</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">{{ form.a.label }} {{ form.a(class="form-control") }}</div>
+    <div class="mb-3">{{ form.b.label }} {{ form.b(class="form-control") }}</div>
+    <div class="mb-3">{{ form.h.label }} {{ form.h(class="form-control") }}</div>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+
+{% if area %}
+<hr>
+<p>ფართობი: {{ area }}</p>
+{% endif %}
+{% endblock %}

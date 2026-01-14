@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.content }}</p>
+<p>ავტორი: {{ post.author.username }}</p>
+<p>ლაიქები: {{ post.likes|length }}</p>
+
+{% if current_user.is_authenticated %}
+<a href="{{ url_for('main.like_post', post_id=post.id) }}" class="btn btn-success btn-sm">Like</a>
+{% endif %}
+
+<hr>
+<h5>კომენტარები:</h5>
+{% for comment in post.comments %}
+<div class="card mb-2">
+  <div class="card-body">
+  {{ comment.content }}
+  <br>
+  <small>ავტორი: {{ comment.author.username }}</small>
+
+  {% if current_user.is_authenticated and current_user.username == "Vayton3" %}
+    <div class="mt-2">
+      <a href="{{ url_for('main.delete_comment', comment_id=comment.id) }}"
+         class="btn btn-sm btn-outline-danger"
+         onclick="return confirm('ნამდვილად გსურს კომენტარის წაშლა?')">
+        წაშლა
+      </a>
+    </div>
+  {% endif %}
+</div>
+</div>
+{% else %}
+<p>კომენტარები არ არსებობს.</p>
+{% endfor %}
+
+{% if current_user.is_authenticated %}
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">{{ form.content.label }} {{ form.content(class="form-control") }}</div>
+  {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,51 @@
+body {
+  background: #f4f7f9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #1d976c, #93f9b9);
+}
+
+
+.hero {
+  background: linear-gradient(135deg, #1d976c, #93f9b9);
+  color: white;
+  padding: 80px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+
+.forum-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.forum-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.btn {
+  border-radius: 25px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+}
